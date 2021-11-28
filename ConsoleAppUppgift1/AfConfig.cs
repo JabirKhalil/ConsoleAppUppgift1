@@ -19,6 +19,7 @@ namespace ConsoleAppUppgift1
 
             builder.RegisterType<Application>().As<IApplication>();
             builder.RegisterType<DrawMenu>().As<IDrawMenu>();
+
             builder.RegisterType<Customer>();
             builder.RegisterType<Animal>();
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())

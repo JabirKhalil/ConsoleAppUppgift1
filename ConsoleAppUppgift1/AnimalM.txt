@@ -1,0 +1,56 @@
+﻿using ConsoleAppUppgift1.TheCustomer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppUppgift1.TheAnimal
+{
+    public class AnimalManager : IAnimalManager
+    {
+        private Animal.Factory AnimalFactory;
+
+        public List<IAnimal> animalList { get; set; }
+        public ICustomerManager CustomerManager;
+        public AnimalManager(Animal.Factory animalFactory,ICustomerManager customerManager)
+        {
+            AnimalFactory = animalFactory;
+            CustomerManager = customerManager;
+            animalList = new();
+        }
+        public List<IAnimal> AddAnimal()
+        {
+            Console.Write("Animal name:");
+            var name = Console.ReadLine();
+          
+            animalList.Add(AnimalFactory(name));
+            return animalList;
+        }
+
+        public void AnimalNames()
+        {
+            //string animalName =CustomerManager.AnimalInCustomerList();
+            int i = 0;
+            Console.WriteLine("The list of animals");
+            Console.WriteLine("--------------------");
+            //if (!animalList.Any())
+            //{
+            //    i++;
+            //    Console.WriteLine(i + " -Animal's name: " + animalName);
+            //    Console.WriteLine("");
+            //}
+
+            foreach (var animal in animalList)
+            {
+                i++;
+                Console.WriteLine(i + " -Animal's name: " + animal.Name);
+                Console.WriteLine("");
+            }
+
+        }
+
+
+        
+    }
+}

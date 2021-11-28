@@ -1,0 +1,2 @@
+﻿AnimalManager.AddAnimal();
+new List<IAnimal>()

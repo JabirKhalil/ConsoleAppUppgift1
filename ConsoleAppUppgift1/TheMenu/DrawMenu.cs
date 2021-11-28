@@ -12,12 +12,14 @@ namespace ConsoleAppUppgift1.TheMenu
     {
         public ICustomerManager CustomerManager { get; set; }
         public IAnimalManager AnimalManager { get; set; }
+        ICustomer Customer;
+        List<ICustomer> customers = new List<ICustomer>();
 
-
-        public DrawMenu(ICustomerManager customerManager,IAnimalManager animalManager)
+        public DrawMenu(ICustomerManager customerManager,IAnimalManager animalManager, ICustomer customer)
         {
             CustomerManager = customerManager;
             AnimalManager = animalManager;
+            Customer = customer;
         }
 
         private void ClearRow()
