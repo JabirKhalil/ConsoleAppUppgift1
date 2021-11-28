@@ -13,6 +13,7 @@ namespace ConsoleAppUppgift1.TheAnimal
 
         public List<IAnimal> animalList { get; set; }
 
+
         public AnimalManager(Animal.Factory animalFactory)
         {
             AnimalFactory = animalFactory;

@@ -34,6 +34,12 @@ namespace ConsoleAppUppgift1
                 .FirstOrDefault(n => n.Name == "I" + i.Name))
                 .AsImplementedInterfaces();
 
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+               .Where(i => i.Namespace.Contains("TheExtraService"))
+               .As(i => i.GetInterfaces()
+               .FirstOrDefault(n => n.Name == "I" + i.Name))
+               .AsImplementedInterfaces();
+
             return builder.Build();
         }
     }
