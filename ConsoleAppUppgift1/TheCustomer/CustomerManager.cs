@@ -1,4 +1,5 @@
-﻿using ConsoleAppUppgift1.TheAnimal;
+﻿using ConsoleAppUppgift1.OutputMethods;
+using ConsoleAppUppgift1.TheAnimal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,24 +21,29 @@ namespace ConsoleAppUppgift1.TheCustomer
         }
         public void AddCustomer()
         {
-            Console.Write("Customer first name:");
-            var Name = Console.ReadLine();
-            Console.Write("Customer surname:");
-            var Surname = Console.ReadLine();
+            OutAndInputBuilder.ToConsole1("Customer's first name:");
+           
+            
+            var Name = OutAndInputBuilder.FromConsole();
+            OutAndInputBuilder.ToConsole1("Customer's surname:");
+          
+            var Surname = OutAndInputBuilder.FromConsole();
             var animalList = new List<IAnimal>();
-            customerList.Add(CustomerFactory(Name, Surname, animalList));            
+            customerList.Add(CustomerFactory(Name, Surname, animalList));
+
+            OutAndInputBuilder.ToConsole1("The Customer " +Name +" "+ Surname+" has registered.");
         }
 
         public void CustomerNames()
         {
             int i = 0;
-            Console.WriteLine("The list of customers");
-            Console.WriteLine("--------------------");
+            OutAndInputBuilder.ToConsole("The list of customers");
+            OutAndInputBuilder.ToConsole("--------------------");
             foreach (var customer in customerList)
             {
                 i++;
-                Console.WriteLine(i + "-Customer: "+customer.Name + " " + customer.Surname);
-                Console.WriteLine("");
+                OutAndInputBuilder.ToConsole(i + "-Customer: "+customer.Name + " " + customer.Surname);
+                OutAndInputBuilder.ToConsole("");
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using ConsoleAppUppgift1.TheAnimal;
+﻿using ConsoleAppUppgift1.OutputMethods;
+using ConsoleAppUppgift1.TheAnimal;
 using ConsoleAppUppgift1.TheCustomer;
 using System;
 using System.Collections.Generic;
@@ -27,14 +28,7 @@ namespace ConsoleAppUppgift1.TheMenu
             Console.Clear();
         }
 
-        //private static void ClearRow()
-        //{
-        //    // Set cursor below the menu
-        //    Console.SetCursorPosition(1, 9);
-
-        //    // Clear Row
-        //    Console.Write("\r" + new string(' ', Console.BufferWidth) + "\r");
-        //}
+      
         public void Menu()
         {
             MenuSelection();
@@ -87,17 +81,17 @@ namespace ConsoleAppUppgift1.TheMenu
 
           static void MenuSelection()
             {
-                Console.WriteLine("The Menu");
-                Console.WriteLine("---------------------");
-                Console.WriteLine("  Select an option   ");
-                Console.WriteLine("---------------------");
-                Console.WriteLine("F: Register a customer");
-                Console.WriteLine("W: Register an Animal");
-                Console.WriteLine("S: Show all customers");
-                Console.WriteLine("R: Show all animals");
-                Console.WriteLine("E: Exit Program");
-                Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%");
-                Console.WriteLine("");
+                OutAndInputBuilder.ToConsole("The Menu");
+                OutAndInputBuilder.ToConsole("---------------------");
+                OutAndInputBuilder.ToConsole("  Select an option   ");
+                OutAndInputBuilder.ToConsole("---------------------");
+                OutAndInputBuilder.ToConsole("F: Register a customer");
+                OutAndInputBuilder.ToConsole("W: Register an Animal");
+                OutAndInputBuilder.ToConsole("S: Show all customers");
+                OutAndInputBuilder.ToConsole("R: Show all animals");
+                OutAndInputBuilder.ToConsole("E: Exit Program");
+                OutAndInputBuilder.ToConsole("%%%%%%%%%%%%%%%%%%%%%");
+                OutAndInputBuilder.ToConsole("");
 
             }
         }
